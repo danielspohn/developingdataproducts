@@ -1,0 +1,68 @@
+---
+title       : Developing Data Products - Project
+subtitle    : Visualizing Twitter Words by State
+author      : Dan Spohn
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : prettify  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Motivation
+
+1. There are many things said on Twitter every day, all around the world.
+2. By examining what people are saying and sharing on Twitter we can get an idea of how people are thinking and feeling for the day.
+3. This application was created to share the words that people use on Twitter, by visualizing the top words tweeted in each State in the United States between the dates of 2015-02-04 and 2015-02-20.
+
+--- .class #id 
+
+## Description
+
+1. The data was downloaded and parsed from Twitter using the TwitteR and StreamR R packages.
+
+2. The data was processed using the tm package in R.
+
+3. Word clouds were created using the wordcloud package in R.
+
+4. Attempts were made to remove curse and crude words from the application, if any offensive words still remove, I apologize.
+
+--- .class #id 
+
+## What the data looked like
+
+```{r echo=FALSE}
+file_path <- "~/../Desktop/Coursera -Data Science Track/Developing Data Products/tweets/"
+state_tweets <- read.csv(paste0(file_path,"us_state_top_tweet_words.csv"))
+```
+
+```{r}
+head(state_tweets[10:20,])              
+                         
+```
+
+--- .class #id 
+
+## Word Count Example
+
+![Word Count Example](assets/img/wordcloud.PNG)
+
+--- .class #id 
+
+## Data Table Example
+
+![Data Table Example](assets/img/datatable.PNG)
+
+--- .class #id 
+
+## Find the App here
+
+[https://danielspohn.shinyapps.io/Project/](https://danielspohn.shinyapps.io/Project/)
+
+
+
+
+
+
